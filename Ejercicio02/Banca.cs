@@ -8,23 +8,26 @@ namespace Ejercicio02
 {
    public class Banca
     {
-        private Cuenta iCuentaEnDolares;
-        private Cuenta iCuentaEnPesos;
+        public Cuenta iCuentaEnDolares;
+        public Cuenta iCuentaEnPesos;
         private string iNumero;
         private string iTitular;
 
         //Constructor
-        public Banca()
+        public Banca(string pNumero, string pTitular)
         {
-            Cuenta iCuentaenDolares = new Cuenta(0, null);
-            Cuenta iCuentaenPesos = new Cuenta(0, null);
+            Cuenta iCuentaenDolares = new Cuenta(0, new Moneda("US", "Dolares", "USD"));
+            Cuenta iCuentaenPesos = new Cuenta(0, new Moneda("AR", "Pesos", "AR"));
+            this.iNumero = pNumero;
+            this.iTitular = pTitular;
 
         }
-        public Banca(string pNumero, string pTitular)
+        /*public Banca(string pNumero, string pTitular)
         {
             this.iNumero = pNumero;
             this.iTitular = pTitular;
         }
+        */
        
         //Propiedad 
         public Cuenta CuentaEnPesos

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banca.cs" />
+    <Compile Include="Controlador.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="Moneda.cs" />
     <Compile Include="Program.cs" />

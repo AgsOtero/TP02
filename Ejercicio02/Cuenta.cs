@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace Ejercicio02
 {
-    public class Cuenta
+     public class Cuenta
     {
         private double iSaldo;
         private Moneda iMoneda;
 
         //Constructor
-        public Cuenta ()
-            {
-            }
-           
-        public Cuenta (Moneda pMoneda)
+        
+        public Cuenta (Moneda pMoneda):this(0, pMoneda) //Llama al otro constructor.
         {
-            this.iMoneda = pMoneda;
+         
         }
         public Cuenta (double pSaldoInicial,Moneda pMoneda)
         {
@@ -33,10 +30,10 @@ namespace Ejercicio02
         //Metodos
         public void AcreditarSaldo (double pSaldo)
         {
-            this.iSaldo = iSaldo + pSaldo;
-            Console.WriteLine("Su saldo ha sido acreditado");
+            this.iSaldo =iSaldo + pSaldo;
+            
         }
-        public bool DebitarSaldo (double pSaldo)
+        public bool DebitarSaldo(double pSaldo)
         {
             if (this.iSaldo - pSaldo > 0)
             {
