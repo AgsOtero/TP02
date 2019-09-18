@@ -25,6 +25,17 @@ namespace Ejercicio02.Test
             Assert.AreEqual(ResultadoEsperado, Resultado);
 
         }
+        [TestMethod]
+        public void PruebaPesosaDolar()
+        {
+            double cantidadPesos = 10;
+            double resultado;
+            double ResultadoEsperado = 570;
+            ControladorFachada controladorFachada = new ControladorFachada();
+
+            resultado = controladorFachada.DolarAPesos(cantidadPesos);
+            Assert.AreEqual(resultado, ResultadoEsperado);
+        }
 
 
         [TestMethod]
@@ -75,6 +86,8 @@ namespace Ejercicio02.Test
 
             Assert.AreEqual(ResultadoEsperado, Resultado);
         }
+        }
+    /*
         [TestMethod]
         public void TrasnferirACP()
         {
@@ -90,5 +103,5 @@ namespace Ejercicio02.Test
             
             Assert.AreEqual(ResultadoEsperado, Resultado);
         }
-    }
+    }*/
 }

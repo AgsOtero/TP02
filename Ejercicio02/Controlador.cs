@@ -18,7 +18,7 @@ namespace Ejercicio02
             if (iBanca.iCuentaEnDolares.DebitarSaldo(pSaldo))
               
                 {
-                pSaldo = pSaldo * Cotizacion;
+                pSaldo *= Cotizacion;
                 iBanca.iCuentaEnPesos.AcreditarSaldo(pSaldo);
                 return (true);
                 }
@@ -35,5 +35,6 @@ namespace Ejercicio02
         {
             return this.iBanca.CuentaEnPesos;
         }
+        
     }
 }

@@ -6,47 +6,42 @@ using System.Threading.Tasks;
 
 namespace Ejercicio02
 {
-     public class Cuenta
+    public class Cuenta
     {
         private double iSaldo;
         private Moneda iMoneda;
 
         //Constructor
-        
-        public Cuenta (Moneda pMoneda):this(0, pMoneda) //Llama al otro constructor.
+
+        public Cuenta(Moneda pMoneda) : this(0, pMoneda) //Llama al otro constructor.
         {
-         
+
         }
-        public Cuenta (double pSaldoInicial,Moneda pMoneda)
+        public Cuenta(double pSaldoInicial, Moneda pMoneda)
         {
             this.iSaldo = pSaldoInicial;
             this.iMoneda = pMoneda;
         }
         //Propiedades
-        public double Saldo
-        {
-            get { return this.iSaldo; }
-        }
+        public double Saldo { get { return this.iSaldo; } }
         //Metodos
-        public void AcreditarSaldo (double pSaldo)
+        public void AcreditarSaldo(double pSaldo)
         {
-            this.iSaldo =iSaldo + pSaldo;
-            
+            iSaldo += pSaldo;
+
         }
         public bool DebitarSaldo(double pSaldo)
         {
-            if (this.iSaldo - pSaldo > 0)
+            if (pSaldo > iSaldo)
             {
-                iSaldo = iSaldo - pSaldo;
-                return (true);
+                return false;
             }
-            else
-            {
-                return (false);
-            }
-            
-            
+            iSaldo -= pSaldo;
+            return true;
         }
-            
+        
+
     }
+            
 }
+

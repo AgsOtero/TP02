@@ -10,45 +10,30 @@ namespace Ejercicio02
     {
         public Cuenta iCuentaEnDolares;
         public Cuenta iCuentaEnPesos;
-        private string iNumero;
-        private string iTitular;
+        public string iNumero;
+        public string iTitular;
+
 
         //Constructor
         public Banca(string pNumero, string pTitular)
         {
-            Cuenta iCuentaenDolares = new Cuenta(0, new Moneda("US", "Dolares", "USD"));
-            Cuenta iCuentaenPesos = new Cuenta(0, new Moneda("AR", "Pesos", "AR"));
-            this.iNumero = pNumero;
-            this.iTitular = pTitular;
+            Moneda Peso = new Moneda("ARS", "Pesos","$");
+            Moneda Dolar = new Moneda("US", "Dolar", "U$D");
+            iNumero = pNumero;
+            iTitular = pTitular;
+            iCuentaEnDolares = new Cuenta(0, Dolar);
+            iCuentaEnPesos = new Cuenta(0, Peso);
+        }
+            
+        //Properties
+        public Cuenta CuentaEnPesos { get { return this.iCuentaEnPesos; }}   
+        
+        public Cuenta CuentaEnDolares {get { return this.iCuentaEnDolares; }}
 
-        }
-        /*public Banca(string pNumero, string pTitular)
-        {
-            this.iNumero = pNumero;
-            this.iTitular = pTitular;
-        }
-        */
+        public string Numero { get { return this.iNumero; }}
+        public string Titular{get { return this.iTitular; }}
+
        
-        //Propiedad 
-        public Cuenta CuentaEnPesos
-        {
-            get { return this.iCuentaEnPesos; }
-         
-        }
-        public Cuenta CuentaEnDolares
-        {
-            get { return this.iCuentaEnDolares; }
-
-        }
-
-        public string Numero
-        {
-            get { return this.iNumero; }
-        }
-        public string Titular
-        {
-            get { return this.iTitular; }
-        }
-
+        
     }
 }
